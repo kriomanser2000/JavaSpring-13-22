@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Add Shop</title>
+</head>
+<body>
+<h1>Add a New Shop</h1>
+<form action="/shops/add" method="post">
+    <label>Name:</label>
+    <input type="text" name="name" required><br>
+    <label>Address:</label>
+    <input type="text" name="address" required><br>
+    <label>Phone:</label>
+    <input type="text" name="phone" required><br>
+    <label>Email:</label>
+    <input type="email" name="email" required><br>
+    <label>Website:</label>
+    <input type="url" name="website"><br>
+    <label>Category:</label>
+    <input type="text" name="category" required><br>
+    <label>Description:</label>
+    <textarea name="description" required></textarea><br>
+    <button type="submit">Add Shop</button>
+</form>
+</body>
+</html>

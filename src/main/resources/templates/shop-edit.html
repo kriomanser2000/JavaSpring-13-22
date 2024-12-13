@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Shop Edit</title>
+</head>
+<body>
+<h1>Edit Shop</h1>
+<form action="/shops/edit" method="post">
+    <input type="hidden" name="originalName" th:value="${shop.name}">
+    <label>Name:</label>
+    <input type="text" name="name" th:value="${shop.name}" required><br>
+    <label>Address:</label>
+    <input type="text" name="address" th:value="${shop.address}" required><br>
+    <label>Phone:</label>
+    <input type="text" name="phone" th:value="${shop.phone}" required><br>
+    <label>Email:</label>
+    <input type="email" name="email" th:value="${shop.email}" required><br>
+    <label>Website:</label>
+    <input type="url" name="website" th:value="${shop.website}"><br>
+    <label>Category:</label>
+    <input type="text" name="category" th:value="${shop.category}" required><br>
+    <label>Description:</label>
+    <textarea name="description" required th:text="${shop.description}"></textarea><br>
+    <button type="submit">Update Shop</button>
+</form>
+<a href="/shops">Back to Shop List</a>
+</body>
+</html>

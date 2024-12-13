@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Shop List</title>
+</head>
+<body>
+<h1>Shop List</h1>
+<form action="/shops" method="get">
+    <label for="query">Search:</label>
+    <input type="text" id="query" name="query" placeholder="Enter name, category, or address">
+    <button type="submit">Search</button>
+</form>
+<a href="/shops/add">Add New Shop</a>
+<ul>
+    <th:block th:each="shop : ${shops}">
+        <li>
+            <a th:href="@{'/shops/details/' + ${shop.name}}" th:text="${shop.name}"></a>
+            - <span th:text="${shop.category}"></span>
+            <form th:action="@{'/shops/delete'}" method="post" style="display:inline;">
+                <input type="hidden" name="name" th:value="${shop.name}">
+                <button type="submit">Delete</button>
+            </form>
+        </li>
+    </th:block>
+</ul>
+</body>
+</html>
